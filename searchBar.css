@@ -1,11 +1,11 @@
 
-  body{
+body{
     font-family: monospace;
     background-color: #2b2b2b;
     color: whitesmoke;
   }
 
-  .container{
+#titlebar{
     color: #2b2b2b;
     text-align: center;
     height: 10%;
@@ -21,15 +21,24 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bc635', endColorstr='#c0ea67',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   }
 
+#results {
+  text-align:center;
+  padding-top: 20%;
+  color: whitesmoke;
+}
+
+
 .search {
     position: absolute;
-    top: 10%;
+    padding-top: 10%;
+    margin: auto;
+    /* top: 30%; */
     left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
   }
   .search * {
-    background-color: #2b2b2b;
+    background-color: transparent;
     outline: none;
     box-sizing: border-box;
   }

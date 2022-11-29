@@ -13,21 +13,24 @@
     <link rel="stylesheet" href="searchBar.css">
 </head>
     <body>
+
         <div class="container">
-            <h4>Find Soldier by Firstname</h4>
-        </div>
 
-        <form class="search" onsubmit="userAction()">
-            <div class="search__wrapper">
-              <input type="text" name="" placeholder="Search for..." class="search__field" id="myInput" onsubmit="userAction()">
-              <button type="submit" class="fa fa-search search__icon" onsubmit="userAction()"></button>
+            <div id="searchBox">
+                <h4 id="titlebar">Find Soldier by Firstname</h4>
+                <form class="search" onsubmit="userAction()" action="javascript:">
+                    <div class="search__wrapper">
+                    <input type="text" autocomplete="off" placeholder="Search for..." class="search__field" id="myInput" onsubmit="userAction()">
+                    <button type="submit" class="fa fa-search search__icon" onsubmit="userAction()"></button>
+                    </div>
+                </form>
             </div>
-        </form>
 
-        <div id="results">
+            <div id="results">
 
-        </div>
+            </div>
 
+          </div>
 
         <script>
             function userAction(){
@@ -43,17 +46,21 @@
 
                 fetch(url)
                 .then(function (response) {
+                    delete response._id
                     return response.json();
                 })
+                // _id
                 .then(function (data) {
                     // appendData(data);
-                    document.getElementById("results").innerHTML = "<pre>"+JSON.stringify(data,undefined, 2) +"</pre>"
+                    document.getElementById("results").innerHTML = "<pre>"+JSON.stringify(data,undefined, 2).replace(/[&\/\\#,+()$~%.'"*?<>{}]/g, '').replace(/[\[\]']+/g,'') +"</pre>"
+                    console.log(data)
                 })
                 .catch(function (err) {
                     console.log(err);
                 });
+                document.getElementById("myInput").value = "";
 
-        }
+            }
         </script>
 </body>
 </html>
