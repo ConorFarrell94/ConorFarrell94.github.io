@@ -46,7 +46,6 @@
 
                 fetch(url)
                 .then(function (response) {
-                    delete response._id
                     return response.json();
                 })
                 // _id
@@ -54,6 +53,9 @@
                     // appendData(data);
                     document.getElementById("results").innerHTML = "<pre>"+JSON.stringify(data,undefined, 2).replace(/[&\/\\#,+()$~%.'"*?<>{}]/g, '').replace(/[\[\]']+/g,'') +"</pre>"
                     console.log(data)
+                    if(data.length == 0) {
+                        document.getElementById("results").innerHTML = "No results"
+                    }
                 })
                 .catch(function (err) {
                     console.log(err);
