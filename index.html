@@ -51,7 +51,7 @@
                 // _id
                 .then(function (data) {
                     // appendData(data);
-                    document.getElementById("results").innerHTML = "<pre>"+JSON.stringify(data,undefined, 2).replace(/[&\/\\#,+()$~%.'"*?<>{}]/g, '').replace(/[\[\]']+/g,'') +"</pre>"
+                    document.getElementById("results").innerHTML = "<pre>"+JSON.stringify(data,undefined, 2).replace(/[&\\\#,+()$~%.'"*?<>{}]/g, '').replace(/[\[\]']+/g,'') +"</pre>"
                     console.log(data)
                     if(data.length == 0) {
                         document.getElementById("results").innerHTML = "No results"
