@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Map of Ireland with Geocodes</title>
+    <style>
+      /* Set the height and width of the map container */
+      #map {
+        height: 800px;
+        width: 800px;
+      }
+      body{
+        font-family: monospace;
+        background-color: #2b2b2b;
+        color: whitesmoke;
+      }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js" integrity="sha512-UnrKxsCMN9hFk7M56t4I4ckB4N/2HHi0w/7+B/1JsXIX3DmyBcsGpT3/BsuZMZf+6mAr0vP81syWtfynHJ69JA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+    <form action="./index.html">
+      <input type="submit" value="Go to Home" />
+    </form>
+
+    <!-- The map container where the map will be displayed -->
+    <div id="map" style="margin: auto;"></div>
+    <script src="map.js"></script>
+    <!-- Load the Leaflet JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+  </body>
+</html>
