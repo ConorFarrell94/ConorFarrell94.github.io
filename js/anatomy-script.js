@@ -60,9 +60,9 @@
 							_obj.on("touchend", function () {
 								_obj.css({ fill: "rgba(255, 0, 0, 0)" });
 								if (basic_config[id]["target"] === "_blank") {
-									window.open(basic_config[id]["url"]);
+									console.log(basic_config[id]["hover"]);
 								} else if (basic_config[id]["target"] === "_self") {
-									window.parent.location.href = basic_config[id]["url"];
+									console.log(basic_config[id]["hover"]);
 								}
 								$("#tip-basic").hide();
 							});
