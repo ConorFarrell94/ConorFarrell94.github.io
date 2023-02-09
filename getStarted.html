@@ -4,36 +4,7 @@
 		<title>WW1 Veterans</title>
 
 		<script src="./js/scripts.js"></script>
-
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-			integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-			crossorigin=""
-		/>
-		<script
-			src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-			integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-			crossorigin=""
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"
-			integrity="sha512-UnrKxsCMN9hFk7M56t4I4ckB4N/2HHi0w/7+B/1JsXIX3DmyBcsGpT3/BsuZMZf+6mAr0vP81syWtfynHJ69JA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-
-		<script
-			src="https://code.jquery.com/jquery-3.6.3.min.js"
-			integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
-			integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
+		<script src="./js/getStarted.js"></script>
 
 		<link
 			rel="stylesheet"
@@ -48,7 +19,7 @@
 		></script>
 
 		<link rel="stylesheet" href="./css/global.css" />
-		<link rel="stylesheet" href="./css/map.css" />
+		<link rel="stylesheet" href="./css/getStarted.css" />
 	</head>
 	<body>
 		<!-- Responsive navbar-->
@@ -82,12 +53,66 @@
 			</div>
 		</nav>
 
-		<!-- The map container where the map will be displayed -->
-		<div id="map" style="margin: auto"></div>
-		<script src="./js/map.js"></script>
-		<!-- Load the Leaflet JavaScript library -->
-		<!-- <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script> -->
+		<!-- <div
+			class="col-md-9 col-md-push-1"
+			style="align-self: center; margin: auto"
+		>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-8 col-xs-offset-2">
+						<form action="#" method="get" id="searchForm" class="input-group">
+							<div class="input-group-btn search-panel">
+								<select
+									name="search_param"
+									id="search_param"
+									class="btn btn-default dropdown-toggle"
+									data-toggle="dropdown"
+								>
+									<option value="all">Name</option>
+									<option value="username">County</option>
+								</select>
+							</div>
+							<input
+								type="text"
+								class="form-control"
+								name="x"
+								placeholder="Search for . . . "
+							/>
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+							<button type="submit" class="btn btn-primary">Search</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> -->
 
+		<div class="container">
+			<div id="searchBox">
+				<h4 id="titlebar">Find Soldier by Firstname</h4>
+				<form class="search" onsubmit="userAction()" action="javascript:">
+					<div class="search__wrapper">
+						<input
+							type="text"
+							autocomplete="off"
+							placeholder="Search for..."
+							class="search__field"
+							id="myInput"
+							onsubmit="userAction()"
+						/>
+						<button
+							type="submit"
+							class="btn btn-primary"
+							onsubmit="userAction()"
+						>Search</button>
+					</div>
+				</form>
+			</div>
+			<div id="results"></div>
+		</div>
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
 			<div class="container px-5">

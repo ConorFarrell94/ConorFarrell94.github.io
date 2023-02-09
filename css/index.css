@@ -1,0 +1,9 @@
+#header-img {
+    background-image: url('../img/one.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+}
+
