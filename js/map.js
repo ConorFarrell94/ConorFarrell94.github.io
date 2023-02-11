@@ -42,34 +42,30 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
+function update(){
+	let x = document.getElementById("myRange").value;
+
+	document.getElementById("range").innerText = x + "km";
+}
+
 
 var clickCircle;
-
-
-// function isMarkerInCircle(circle, mark) {
-// 	let circleCenter = circle.getLatLng();
-// 	geocodes.forEach(element =>
-// 		let markerPos = geopin.getLatLng();
-// 		if (circleCenter.distanceTo(markerPos) < circle.getRadius()) {
-// 			return true;
-// 		} )
-// }
-
 var markersLayer = new L.LayerGroup();
 function onMapClick(e) {
+	var range = document.getElementById("myRange").value * 1000;
 	markersLayer.clearLayers();
 	markersLayer.addTo(map);
 	if (clickCircle != undefined) {
 		map.removeLayer(clickCircle);
 	}
-	clickCircle = L.circle(e.latlng, 20000, {
+	clickCircle = L.circle(e.latlng, range, {
 		color: "#ff3b6b",
 		fillOpacity: 0.3,
 		opacity: 1,
 	}).addTo(map);
 	geocodes.forEach(async (geocode) => {
 		latlng_a = new L.LatLng(geocode[0], geocode[1])
-		if (latlng_a.distanceTo(e.latlng) < 20000) {
+		if (latlng_a.distanceTo(e.latlng) < range) {
 			marker = L.marker(latlng_a);
 			markersLayer.addLayer(marker);
 		}

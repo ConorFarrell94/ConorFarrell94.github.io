@@ -81,7 +81,9 @@
 				</div>
 			</div>
 		</nav>
-
+		<div class="slidecontainer">
+			Range/Radius: <span id="range"></span><input type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="update()">
+		  </div>
 		<!-- The map container where the map will be displayed -->
 		<div id="map" style="margin: auto"></div>
 		<script src="./js/map.js"></script>
