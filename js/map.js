@@ -7,6 +7,7 @@ fetch(webhook_url)
 		return response.json();
 	})
 	.then(function (data) {
+		console.log(data);
 		// JSON.stringify(data, undefined, 2)
 		// 	.replace(/[&\\\#,+()$~%.'"*?<>{}]/g, "")
 		// 	.replace(/[\[\]']+/g, "")
@@ -17,14 +18,17 @@ fetch(webhook_url)
 		// }
 
 		for (var i = 0; i < data.length; i++) {
-			let latitude = data[i].Latitude;
+			let latitude = data[i].LATITUDE;
 			// console.log(latitude);
 
-			let longitude = data[i].Longitude;
+			let longitude = data[i].LONGITUDE;
 			// console.log(longitude);
 			geopin = [latitude, longitude];
 			// L.marker(geopin).addTo(map);
-			geocodes.push(geopin);
+			if (latitude != null && longitude != null) {
+				geocodes.push(geopin);
+			}
+
 		}
 
 		// console.log(geocodes);
