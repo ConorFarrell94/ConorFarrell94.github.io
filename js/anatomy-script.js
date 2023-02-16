@@ -1,6 +1,44 @@
 (function ($) {
 	"use strict";
 
+	function userAction(selected) {
+		let bodyPart = selected;
+		console.log(bodyPart)
+
+		let webhook_url =
+			"https://eu-west-1.aws.data.mongodb-api.com/app/fyp-bffpf/endpoint/bodyPartSearch";
+
+		let url = webhook_url + "?arg=" + bodyPart;
+
+		fetch(url)
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				data.map(function(data) {
+					delete data._id;
+					delete data.LATITUDE;
+					delete data.LONGITUDE;
+					return data;
+				});
+				// console.log(data);
+				document.getElementById("results").innerHTML =
+					"<pre>" +
+					JSON.stringify(data, undefined, 2)
+						.replace(/[&\\\#,+()$~%.'"*?<>{}]/g, "")
+						.replace(/[\[\]']+/g, "") +
+					"</pre>";
+				console.log(data);
+				if (data.length == 0) {
+					document.getElementById("results").innerHTML = "No results";
+				}
+			})
+			.catch(function (err) {
+				console.log(err);
+			});
+		// document.getElementById("myInput").value = "";
+	}
+
 	function isTouchEnabled() {
 		return (
 			"ontouchstart" in window ||
@@ -60,9 +98,13 @@
 							_obj.on("touchend", function () {
 								_obj.css({ fill: "rgba(255, 0, 0, 0)" });
 								if (basic_config[id]["target"] === "_blank") {
-									console.log(basic_config[id]["hover"]);
+									// console.log(basic_config[id]["hover"]);
+									let selected = basic_config[id]["hover"];
+									userAction(selected);
 								} else if (basic_config[id]["target"] === "_self") {
-									console.log(basic_config[id]["hover"]);
+									// console.log(basic_config[id]["hover"]);
+									let selected = basic_config[id]["hover"];
+									userAction(selected);
 								}
 								$("#tip-basic").hide();
 							});
@@ -95,10 +137,14 @@
 				_obj.css({ fill: "rgba(255, 0, 0, 0.3)" });
 				if (basic_config[id]["target"] === "_blank") {
 					// window.open(basic_config[id]['url']);
-					console.log(basic_config[id]["hover"]);
+					// console.log(basic_config[id]["hover"]);
+					let selected = basic_config[id]["hover"];
+					userAction(selected);
 				} else if (basic_config[id]["target"] === "_self") {
 					// window.parent.location.href = basic_config[id]['url'];
-					console.log(basic_config[id]["hover"]);
+					// console.log(basic_config[id]["hover"]);
+					let selected = basic_config[id]["hover"];
+					userAction(selected);
 				}
 			});
 			_obj.on("mousemove", function (e) {
@@ -128,3 +174,4 @@
 		}
 	}
 })(jQuery);
+
