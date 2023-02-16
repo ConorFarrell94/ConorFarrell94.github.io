@@ -4,6 +4,7 @@
 		<title>WW1 Veterans</title>
 
 		<script src="./js/scripts.js"></script>
+		<script src="./js/detailedSearch.js"></script>
 
 		<script
 			src="https://code.jquery.com/jquery-3.6.3.min.js"
@@ -65,6 +66,46 @@
 		</nav>
 
 		<div class="container">
+			<div id="searchBox">
+				<h4 id="titlebar">Find Soldier</h4>
+				<form class="search" onsubmit="userAction()" action="javascript:">
+					<div class="search__wrapper">
+						<input
+							type="text"
+							autocomplete="off"
+							placeholder="name"
+							class="search__field"
+							id="nameInput"
+							onsubmit="userAction()"
+						/>
+						<input
+							type="text"
+							autocomplete="off"
+							placeholder="surname"
+							class="search__field"
+							id="surnameInput"
+							onsubmit="userAction()"
+						/>
+						<input
+							type="text"
+							autocomplete="off"
+							placeholder="county"
+							class="search__field"
+							id="countyInput"
+							onsubmit="userAction()"
+						/>
+						<button
+							type="submit"
+							class="btn btn-primary"
+							onsubmit="userAction()"
+						>Search</button>
+					</div>
+				</form>
+			</div>
+			<div id="results"></div>
+		</div>
+
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-md-3 bg-secondary">
 					<div class="filter-sidebar">
@@ -145,7 +186,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
