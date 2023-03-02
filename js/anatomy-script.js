@@ -3,7 +3,7 @@
 
 	function userAction(selected) {
 		let bodyPart = selected;
-		console.log(bodyPart)
+		console.log(bodyPart);
 
 		let webhook_url =
 			"https://eu-west-1.aws.data.mongodb-api.com/app/fyp-bffpf/endpoint/bodyPartSearch";
@@ -15,14 +15,14 @@
 				return response.json();
 			})
 			.then(function (data) {
-				data.map(function(data) {
+				data.map(function (data) {
 					delete data._id;
 					delete data.LATITUDE;
 					delete data.LONGITUDE;
 					return data;
 				});
 				// console.log(data);
-				document.getElementById("results").innerHTML =
+				document.getElementById("json-data").innerHTML =
 					"<pre>" +
 					JSON.stringify(data, undefined, 2)
 						.replace(/[&\\\#,+()$~%.'"*?<>{}]/g, "")
@@ -174,4 +174,3 @@
 		}
 	}
 })(jQuery);
-

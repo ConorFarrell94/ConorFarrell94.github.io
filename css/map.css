@@ -9,8 +9,8 @@
 } */
 .slidecontainer {
 	width: 100%; /* Width of the outside container */
-    margin: auto;
-    text-align: center;
+	margin: auto;
+	text-align: center;
 }
 
 /* The slider itself */

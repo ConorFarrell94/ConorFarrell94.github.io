@@ -28,7 +28,6 @@ fetch(webhook_url)
 			if (latitude != null && longitude != null) {
 				geocodes.push(geopin);
 			}
-
 		}
 
 		// console.log(geocodes);
@@ -46,12 +45,11 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 		'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-function update(){
+function update() {
 	let x = document.getElementById("myRange").value;
 
 	document.getElementById("range").innerText = x + "km";
 }
-
 
 var clickCircle;
 var markersLayer = new L.LayerGroup();
@@ -68,20 +66,14 @@ function onMapClick(e) {
 		opacity: 1,
 	}).addTo(map);
 	geocodes.forEach(async (geocode) => {
-		latlng_a = new L.LatLng(geocode[0], geocode[1])
+		latlng_a = new L.LatLng(geocode[0], geocode[1]);
 		if (latlng_a.distanceTo(e.latlng) < range) {
 			marker = L.marker(latlng_a);
 			markersLayer.addLayer(marker);
 		}
-	}
-	);
-
+	});
 }
 map.on("click", onMapClick);
-
-
-
-
 
 // map.on('click', function(e){
 // 	var coord = e.latlng;
