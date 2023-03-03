@@ -15,6 +15,7 @@ function replaceUndefined() {
 		button.addEventListener("click", replaceUndefined);
 	});
 }
+
 function genTable(results) {
 	// Create the table and add it to the page
 	var tableHtml =
@@ -97,6 +98,7 @@ function toggleColumn(colIndex) {
 		}
 	}
 }
+
 function userAction() {
 	let searchString = document.getElementById("myInput").value;
 	let webhook_url =
