@@ -62,7 +62,9 @@
 		</nav>
 
 		<div id="searchBox">
-			<h4 id="titlebar">Find Soldier by Firstname</h4>
+			<h4 id="titlebar">Firstname search</h4>
+			<p>Search by firstname only. Results will contain firstname, surname, reason and county.</p>
+			<p>"Reason" is classified as GSW (Gunshot wound), Disease (Everything else) or "Both".</p>
 			<form class="search" onsubmit="userAction()" action="javascript:">
 				<div class="search__wrapper">
 					<input
@@ -80,6 +82,23 @@
 			</form>
 		</div>
 		<div class="resultsContainer">
+			<p>Toggle column display</p>
+			<label>
+				<input type="checkbox" id="showCol1" onclick="toggleColumn(0)"/>
+				Name
+			  </label>
+			  <label>
+				<input type="checkbox" id="showCol2" onclick="toggleColumn(1)"/>
+				Surname
+			  </label>
+			  <label>
+				<input type="checkbox" id="showCol3" onclick="toggleColumn(2)"/>
+				Reason
+			  </label>
+			  <label>
+				<input type="checkbox" id="showCol4" onclick="toggleColumn(3)"/>
+				County
+			  </label>
 			<div id="resultsTableContainer"></div>
 		</div>
 
