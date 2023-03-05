@@ -1,37 +1,30 @@
 let webhook_url =
 	"https://eu-west-1.aws.data.mongodb-api.com/app/fyp-bffpf/endpoint/locationDemo";
 
-var geocodes = [];
+var pinData = [];
+
+var clickCircle;
+var markersLayer = new L.LayerGroup();
+
 fetch(webhook_url)
 	.then(function (response) {
 		return response.json();
 	})
 	.then(function (data) {
-		console.log(data);
-		// JSON.stringify(data, undefined, 2)
-		// 	.replace(/[&\\\#,+()$~%.'"*?<>{}]/g, "")
-		// 	.replace(/[\[\]']+/g, "")
-
-		// console.log(data[1]);
-		// for(x in data[1]) {
-		// 	console.log(x)
-		// }
-
 		for (var i = 0; i < data.length; i++) {
+			let name = data[i].NAME;
+			let surname = data[i].SURNAME;
+			let unit = data[i].UNIT;
+			let rank = data[i].RANK;
 			let latitude = data[i].LATITUDE;
-			// console.log(latitude);
-
 			let longitude = data[i].LONGITUDE;
-			// console.log(longitude);
-			geopin = [latitude, longitude];
-			// L.marker(geopin).addTo(map);
+
+			pin = [name, surname, unit, rank, latitude, longitude];
+
 			if (latitude != null && longitude != null) {
-				geocodes.push(geopin);
+				pinData.push(pin);
 			}
 		}
-
-		// console.log(geocodes);
-		// setPins(geocodes);
 	})
 	.catch(function (err) {
 		console.log(err);
@@ -51,8 +44,9 @@ function update() {
 	document.getElementById("range").innerText = x + "km";
 }
 
-var clickCircle;
-var markersLayer = new L.LayerGroup();
+function onPinClick(e) {
+	alert(pin);
+}
 function onMapClick(e) {
 	var range = document.getElementById("myRange").value * 1000;
 	markersLayer.clearLayers();
@@ -65,25 +59,24 @@ function onMapClick(e) {
 		fillOpacity: 0.3,
 		opacity: 1,
 	}).addTo(map);
-	geocodes.forEach(async (geocode) => {
-		latlng_a = new L.LatLng(geocode[0], geocode[1]);
+	pinData.forEach(async (pin) => {
+		latlng_a = new L.LatLng(pin[4], pin[5]);
 		if (latlng_a.distanceTo(e.latlng) < range) {
 			marker = L.marker(latlng_a);
+			marker
+				.bindPopup(
+					"NAME : " +
+						pin[0] +
+						"<br> SURNAME : " +
+						pin[1] +
+						"<br> UNIT : " +
+						pin[2] +
+						"<br> RANK : " +
+						pin[3]
+				)
+				.openPopup();
 			markersLayer.addLayer(marker);
 		}
 	});
 }
 map.on("click", onMapClick);
-
-// map.on('click', function(e){
-// 	var coord = e.latlng;
-// 	var lat = coord.lat;
-// 	var lng = coord.lng;
-// 	console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
-// 	L.circle([lat, lng], {radius: 20000}).addTo(map);
-// 	});
-// function setPins(geocodes) {
-// 	geocodes.forEach(function (geocode) {
-// 		L.marker(geocode).addTo(map);
-// 	});
-// }
