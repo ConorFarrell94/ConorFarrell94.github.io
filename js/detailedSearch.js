@@ -112,6 +112,7 @@ function genTable(results) {
 		scrollX: "200px",
 		scrollCollapse: true,
 		paging: true,
+		responsive: true,
 	});
 	replaceUndefined();
 	const paginateButtons = document.querySelectorAll(".paginate_button");
