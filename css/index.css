@@ -14,9 +14,22 @@
 	justify-content: center;
 	align-items: center;
 	margin: auto;
-  }
-  #capBadge-div img {
+}
+#capBadge-div img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-  }
+}
+
+#unitByCountDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+#countyByCountDiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
