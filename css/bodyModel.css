@@ -1,8 +1,4 @@
 #resultsContainer {
 	max-height: 500px;
-	overflow-y: scroll;
-	border: 2px solid #212529;
-	margin: 5%;
-	text-align: left;
-    font-size: large;
+	margin: 2%;
 }

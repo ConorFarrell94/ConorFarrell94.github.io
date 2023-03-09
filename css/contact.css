@@ -1,0 +1,53 @@
+/* Center the form on the page */
+#fs-frm {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  #fs-frm-inputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Style the form labels */
+  #fs-frm-inputs label {
+    font-weight: bold;
+  }
+
+  /* Add some padding to the form inputs and textareas */
+  #fs-frm-inputs input[type=text],
+  #fs-frm-inputs input[type=email],
+  #fs-frm-inputs input[type=telephone],
+  #fs-frm-inputs textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+  }
+
+  /* Add some margin to the submit button */
+  #fs-frm input[type=submit] {
+    margin-top: 20px;
+  }
+
+  /* Style the submit button */
+  #fs-frm input[type=submit]:hover {
+    background-color: #007bff;
+  }
+
+  /* Change the color of the required indicator */
+  #fs-frm-inputs label[for=full-name]::after,
+  #fs-frm-inputs label[for=email-address]::after,
+  #fs-frm-inputs label[for=contact]::after {
+    color: #ff0000;
+    content: " *";
+  }
+
+  /* Style the form inputs and textareas when they are focused */
+  #fs-frm-inputs input:focus,
+  #fs-frm-inputs textarea:focus {
+    box-shadow: 0 0 5px #007bff;
+    outline: none;
+  }

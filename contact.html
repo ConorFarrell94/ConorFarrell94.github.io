@@ -51,77 +51,71 @@
 				</div>
 			</div>
 		</nav>
-<!-- Contact section-->
-<section class="bg-light py-5">
-	<div class="container px-5 my-5 px-5">
-		<div class="text-center mb-5">
-			<h2 class="fw-bolder">Get in touch</h2>
-			<p class="lead mb-0">We'd love to hear from you</p>
-		</div>
-		<div class="row gx-5 justify-content-center">
-			<div class="col-lg-6">
-				<form id="contactForm">
-					<!-- Name input-->
-					<div class="form-floating mb-3">
+		<!-- Contact section-->
+		<div>
+			<form
+				id="fs-frm"
+				name="contact-form"
+				accept-charset="utf-8"
+				action="https://formspree.io/f/mdovdonw"
+				method="post"
+			>
+				<div class="row">
+					<div class="col-md-6">
+						<label for="full-name" class="form-label">Full Name</label>
 						<input
-							class="form-control"
-							id="name"
 							type="text"
-							placeholder="Enter your name..."
-						/>
-						<label for="name">Full name</label>
-						<div class="invalid-feedback">A name is required.</div>
-					</div>
-					<!-- Email address input-->
-					<div class="form-floating mb-3">
-						<input
+							name="name"
+							id="full-name"
 							class="form-control"
-							id="email"
+							placeholder="First and Last"
+							required
+						/>
+					</div>
+					<div class="col-md-6">
+						<label for="email-address" class="form-label">Email Address</label>
+						<input
 							type="email"
-							placeholder="name@example.com"
-						/>
-						<label for="email">Email address</label>
-						<div class="invalid-feedback">An email is required.</div>
-						<div class="invalid-feedback">Email is not valid.</div>
-					</div>
-					<!-- Phone number input-->
-					<div class="form-floating mb-3">
-						<input
+							name="_replyto"
+							id="email-address"
 							class="form-control"
-							id="phone"
-							type="tel"
-							placeholder="(123) 456-7890"
+							placeholder="email@domain.tld"
+							required
 						/>
-						<label for="phone">Phone number</label>
-						<div class="invalid-feedback">A phone number is required.</div>
 					</div>
-					<!-- Message input-->
-					<div class="form-floating mb-3">
-						<textarea
-							class="form-control"
-							id="message"
-							type="text"
-							placeholder="Enter your message here..."
-							style="height: 10rem"
-						></textarea>
-						<label for="message">Message</label>
-						<div class="invalid-feedback">A message is required.</div>
-					</div>
-					<!-- Submit Button-->
-					<div class="d-grid">
-						<button
-							class="btn btn-primary btn-lg disabled"
-							id="submitButton"
-							type="submit"
-						>
-							Submit
-						</button>
-					</div>
-				</form>
-			</div>
+				</div>
+				<div class="mb-3">
+					<label for="telephone" class="form-label"
+						>Telephone Number (Optional)</label
+					>
+					<input
+						type="telephone"
+						name="telephone"
+						id="telephone"
+						class="form-control"
+						placeholder=""
+					/>
+				</div>
+				<div class="mb-3">
+					<label for="contact" class="form-label">Message</label>
+					<textarea
+						rows="6"
+						name="contact"
+						id="contact"
+						class="form-control"
+						placeholder=""
+						required
+					></textarea>
+				</div>
+				<input
+					type="hidden"
+					name="_subject"
+					id="email-subject"
+					value="contact Form Submission"
+				/>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 		</div>
-	</div>
-</section>
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
 			<div class="container px-5">

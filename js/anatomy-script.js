@@ -1,6 +1,5 @@
 (function ($) {
 	"use strict";
-
 	function userAction(selected) {
 		let bodyPart = selected;
 		console.log(bodyPart);
@@ -21,23 +20,104 @@
 					delete data.LONGITUDE;
 					return data;
 				});
-				// console.log(data);
-				document.getElementById("json-data").innerHTML =
-					"<pre>" +
-					JSON.stringify(data, undefined, 2)
-						.replace(/[&\\\#,+()$~%.'"*?<>{}]/g, "")
-						.replace(/[\[\]']+/g, "") +
-					"</pre>";
-				console.log(data);
+
 				if (data.length == 0) {
+					document.getElementById("json-table").innerHTML = "";
 					document.getElementById("results").innerHTML = "No results";
+					return;
 				}
+
+				// Reset the table
+				document.getElementById("table-header-row").innerHTML = "";
+				document.getElementById("table-body").innerHTML = "";
+				document
+					.getElementById("json-table")
+					.classList.remove("table", "table-responsive");
+				let existingCss = document.getElementById("json-table-css");
+				if (existingCss) existingCss.remove();
+
+				// Create the table header row
+				let headerRow = document.getElementById("table-header-row");
+				let headers = Object.keys(data[0]);
+				headers.forEach(function (header) {
+					let th = document.createElement("th");
+					th.textContent = header;
+					headerRow.appendChild(th);
+				});
+
+				// Create the table body rows
+				let tbody = document.getElementById("table-body");
+				// let maxRows = 5; // Set the maximum number of rows to 5
+				let rowCount = 0;
+				data.forEach(function (row) {
+					// if (rowCount >= maxRows) return; // Stop creating rows after reaching the maximum
+					let tr = document.createElement("tr");
+					headers.forEach(function (header) {
+						let td = document.createElement("td");
+						td.textContent = row[header];
+						tr.appendChild(td);
+					});
+					tbody.appendChild(tr);
+					rowCount++;
+				});
+
+				// Add Bootstrap classes to the table
+				document
+					.getElementById("json-table")
+					.classList.add("table", "table-responsive");
+
+				// Add CSS rule to the table classes to set max-height and overflow-y properties
+				let css = document.createElement("style");
+				css.id = "json-table-css";
+				css.type = "text/css";
+				css.innerHTML =
+					".table-responsive {max-height: 400px; overflow-y: scroll;} .table {max-height: 200px; overflow-y: scroll;}";
+				document.head.appendChild(css);
+
+				console.log(data);
 			})
 			.catch(function (err) {
 				console.log(err);
 			});
-		// document.getElementById("myInput").value = "";
 	}
+
+	// function userAction(selected) {
+	// 	let bodyPart = selected;
+	// 	console.log(bodyPart);
+
+	// 	let webhook_url =
+	// 		"https://eu-west-1.aws.data.mongodb-api.com/app/fyp-bffpf/endpoint/bodyPartSearch";
+
+	// 	let url = webhook_url + "?arg=" + bodyPart;
+
+	// 	fetch(url)
+	// 		.then(function (response) {
+	// 			return response.json();
+	// 		})
+	// 		.then(function (data) {
+	// 			data.map(function (data) {
+	// 				delete data._id;
+	// 				delete data.LATITUDE;
+	// 				delete data.LONGITUDE;
+	// 				return data;
+	// 			});
+	// 			// console.log(data);
+	// 			document.getElementById("json-data").innerHTML =
+	// 				"<pre>" +
+	// 				JSON.stringify(data, undefined, 2)
+	// 					.replace(/[&\\\#,+()$~%.'"*?<>{}]/g, "")
+	// 					.replace(/[\[\]']+/g, "") +
+	// 				"</pre>";
+	// 			console.log(data);
+	// 			if (data.length == 0) {
+	// 				document.getElementById("results").innerHTML = "No results";
+	// 			}
+	// 		})
+	// 		.catch(function (err) {
+	// 			console.log(err);
+	// 		});
+	// 	// document.getElementById("myInput").value = "";
+	// }
 
 	function isTouchEnabled() {
 		return (
