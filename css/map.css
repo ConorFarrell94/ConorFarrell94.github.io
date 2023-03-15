@@ -7,7 +7,7 @@
     background-color: #2b2b2b;
     color: whitesmoke;
 } */
-.slidecontainer {
+#slidecontainer {
 	width: 100%; /* Width of the outside container */
 	margin: auto;
 	text-align: center;

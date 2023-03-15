@@ -17,13 +17,6 @@
 			crossorigin=""
 		></script>
 		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"
-			integrity="sha512-UnrKxsCMN9hFk7M56t4I4ckB4N/2HHi0w/7+B/1JsXIX3DmyBcsGpT3/BsuZMZf+6mAr0vP81syWtfynHJ69JA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-
-		<script
 			src="https://code.jquery.com/jquery-3.6.3.min.js"
 			integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
 			crossorigin="anonymous"
@@ -47,8 +40,12 @@
 			crossorigin="anonymous"
 		></script>
 
+		<script src="./js/turf.min.js" charset="utf-8"></script>
+
 		<link rel="stylesheet" href="./css/global.css" />
 		<link rel="stylesheet" href="./css/map.css" />
+
+
 	</head>
 	<body>
 		<!-- Responsive navbar-->
@@ -81,12 +78,34 @@
 				</div>
 			</div>
 		</nav>
-		<div class="slidecontainer">
-			Range/Radius: <span id="range"></span><input type="range" min="1" max="100" value="50" class="slider" id="myRange" oninput="update()">
-		  </div>
+		<div id="optionsDiv">
+			<label>
+				<input type="checkbox" id="checkbox1" onclick="clickCircle()" />
+				Circle
+			</label>
+			<br />
+			<label>
+				<input type="checkbox" id="checkbox2" onclick="clickPolygon()" />
+				Polygon
+			</label>
+			<button onclick="clearMap()">Clear</button>
+			<div id="slidecontainer">
+				Range/Radius: <span id="range"></span
+				><input
+					type="range"
+					min="1"
+					max="100"
+					value="50"
+					class="slider"
+					id="myRange"
+					oninput="update()"
+				/>
+			</div>
+		</div>
 		<!-- The map container where the map will be displayed -->
 		<div id="map" style="margin: auto"></div>
 		<script src="./js/map.js"></script>
+
 		<!-- Load the Leaflet JavaScript library -->
 		<!-- <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script> -->
 
