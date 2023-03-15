@@ -52,7 +52,7 @@
 			</div>
 		</nav>
 		<!-- Contact section-->
-		<div>
+		<div id="contact-form">
 			<form
 				id="fs-frm"
 				name="contact-form"
@@ -113,7 +113,9 @@
 					id="email-subject"
 					value="contact Form Submission"
 				/>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-subm">Submit</button>
+				<br />
+				<img src="./img/send_mail.png" alt="contact" />
 			</form>
 		</div>
 		<!-- Footer-->
@@ -121,6 +123,28 @@
 			<div class="container px-5">
 				<p class="m-0 text-center text-white">Copyright &copy; My Website</p>
 			</div>
+			<script>
+				// Select the contact image element
+				const contactImg = document.querySelector("img[alt='contact']");
+
+				// Add event listener for load event on the image
+				contactImg.addEventListener("load", () => {
+					// Select the button element
+					const button = document.querySelector("button[type='submit']");
+
+					// Add event listener for click event
+					button.addEventListener("click", () => {
+						// Add a CSS class to make the image bounce
+						contactImg.classList.add("bounce");
+					});
+
+					// Add event listener for animationend event
+					contactImg.addEventListener("animationend", () => {
+						// Remove the "bounce" class to allow the animation to be triggered again
+						contactImg.classList.remove("bounce");
+					});
+				});
+			</script>
 		</footer>
 	</body>
 </html>

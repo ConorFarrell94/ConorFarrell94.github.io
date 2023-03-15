@@ -1,53 +1,63 @@
-/* Center the form on the page */
+#contact-form {
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	margin: 0 auto;
+	max-width: 60vw;
+	text-align: center;
+}
 #fs-frm {
-    margin: 0 auto;
-    max-width: 600px;
-    text-align: center;
-  }
+	padding: 10%;
+	/* display: flex; */
+	flex-direction: column;
+	align-items: center;
+	background-color: #0050a78c;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 20px rgba(179, 179, 179, 0.5);
+}
+#fs-frm img {
+	display: flex;
+	margin: 0 auto;
+}
+.btn {
+	background-color: #f2f2f2;
+}
+.btn:hover {
+	background-color: #10d160;
+}
+#fs-frm-inputs {
+	display: flex;
+	flex-direction: column;
+}
+#fs-frm-inputs label {
+	font-weight: bold;
+}
+#fs-frm-inputs input[type="text"],
+#fs-frm-inputs input[type="email"],
+#fs-frm-inputs input[type="telephone"],
+#fs-frm-inputs textarea {
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: #f2f2f2;
+	margin-bottom: 20px;
+}
+#fs-frm input[type="submit"] {
+	margin-top: 20px;
+}
 
-  #fs-frm-inputs {
-    display: flex;
-    flex-direction: column;
-  }
+#fs-frm input[type="submit"]:hover {
+	background-color: #007bff;
+}
 
-  /* Style the form labels */
-  #fs-frm-inputs label {
-    font-weight: bold;
-  }
-
-  /* Add some padding to the form inputs and textareas */
-  #fs-frm-inputs input[type=text],
-  #fs-frm-inputs input[type=email],
-  #fs-frm-inputs input[type=telephone],
-  #fs-frm-inputs textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #f2f2f2;
-    margin-bottom: 20px;
-  }
-
-  /* Add some margin to the submit button */
-  #fs-frm input[type=submit] {
-    margin-top: 20px;
-  }
-
-  /* Style the submit button */
-  #fs-frm input[type=submit]:hover {
-    background-color: #007bff;
-  }
-
-  /* Change the color of the required indicator */
-  #fs-frm-inputs label[for=full-name]::after,
-  #fs-frm-inputs label[for=email-address]::after,
-  #fs-frm-inputs label[for=contact]::after {
-    color: #ff0000;
-    content: " *";
-  }
-
-  /* Style the form inputs and textareas when they are focused */
-  #fs-frm-inputs input:focus,
-  #fs-frm-inputs textarea:focus {
-    box-shadow: 0 0 5px #007bff;
-    outline: none;
-  }
+#fs-frm-inputs label[for="full-name"]::after,
+#fs-frm-inputs label[for="email-address"]::after,
+#fs-frm-inputs label[for="contact"]::after {
+	color: #ff0000;
+	content: " *";
+}
+#fs-frm-inputs input:focus,
+#fs-frm-inputs textarea:focus {
+	box-shadow: 0 0 5px #007bff;
+	outline: none;
+}

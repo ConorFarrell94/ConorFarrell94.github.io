@@ -1,4 +1,5 @@
-#resultsContainer {
-	max-height: 500px;
-	margin: 2%;
+#resultsTableContainer {
+	padding: 40px;
+	width: 100%;
 }
+

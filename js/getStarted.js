@@ -1,3 +1,14 @@
+function addToggleBtns() {
+	const container = document.getElementById("toggleBtns");
+	container.innerHTML = `
+	<p>Toggle column display</p>
+	<button class="toggle-vis" data-column="0">Name</button>
+	<button class="toggle-vis" data-column="1">Surname</button>
+	<button class="toggle-vis" data-column="2">Reason</button>
+	<button class="toggle-vis" data-column="3">County</button>
+	`;
+}
+
 function replaceUndefined() {
 	const table = document.getElementById("resultsTable");
 	const cells = table.getElementsByTagName("td");
@@ -18,53 +29,20 @@ function replaceUndefined() {
 
 function genTable(results) {
 	// Create the table and add it to the page
-	var tableHtml =
-		'<table id="resultsTable" style="width: 100%;table-layout:fixed:border-collapse: collapse;">';
+	var tableHtml = '<table id="resultsTable" style="width: 100%">';
 	tableHtml += "<thead><tr>";
 	tableHtml += "<th>Name</th>";
 	tableHtml += "<th>Surname</th>";
-	// tableHtml += "<th>Unit</th>";
-	// tableHtml += "<th>Rank</th>";
-	// tableHtml += "<th>Age</th>";
-	// tableHtml += "<th>MOP Reference</th>";
-	// tableHtml += "<th>Service Number</th>";
 	tableHtml += "<th>Reason</th>";
-	// tableHtml += "<th>Diagnosis 1</th>";
-	// tableHtml += "<th>Diagnosis 2</th>";
-	// tableHtml += "<th>Date In</th>";
-	// tableHtml += "<th>Date Out</th>";
-	// tableHtml += "<th>Duration</th>";
-	// tableHtml += "<th>Religion</th>";
-	// tableHtml += "<th>NOK</th>";
-	// tableHtml += "<th>Address</th>";
 	tableHtml += "<th>County</th>";
-	// tableHtml += "<th>Remarks 1</th>";
-	// tableHtml += "<th>Remarks 2</th>";
-	// tableHtml += "<th>Doctor</th>";
 	tableHtml += "</tr></thead>";
 	tableHtml += "<tbody>";
 	for (let i = 0; i < results.length; i++) {
 		tableHtml += "<tr>";
 		tableHtml += `<td>${results[i].NAME}</td>`;
 		tableHtml += `<td>${results[i].SURNAME}</td>`;
-		// tableHtml += `<td>${results[i].UNIT}</td>`;
-		// tableHtml += `<td>${results[i].RANK}</td>`;
-		// tableHtml += `<td>${results[i].AGE}</td>`;
-		// tableHtml += `<td>${results[i].MOP_REFERENCE}</td>`;
-		// tableHtml += `<td>${results[i].SERVICE_NUMBER}</td>`;
 		tableHtml += `<td>${results[i].REASON}</td>`;
-		// tableHtml += `<td>${results[i].DIAGNOSIS_1}</td>`;
-		// tableHtml += `<td>${results[i].DIAGNOSIS_2}</td>`;
-		// tableHtml += `<td>${results[i].DATE_IN}</td>`;
-		// tableHtml += `<td>${results[i].DATE_OUT}</td>`;
-		// tableHtml += `<td>${results[i].DURATION}</td>`;
-		// tableHtml += `<td>${results[i].RELIGION}</td>`;
-		// tableHtml += `<td>${results[i].NOK}</td>`;
 		tableHtml += `<td>${results[i].ADDRESS}</td>`;
-		// tableHtml += `<td>${results[i].COUNTY}</td>`;
-		// tableHtml += `<td>${results[i].REMARKS_1}</td>`;
-		// tableHtml += `<td>${results[i].REMARKS_2}</td>`;
-		// tableHtml += `<td>${results[i].DOCTOR}</td>`;
 		tableHtml += "</tr>";
 	}
 	tableHtml += "</tbody></table>";
@@ -72,10 +50,13 @@ function genTable(results) {
 	$("#resultsTableContainer").html(tableHtml);
 
 	// Initialize the DataTable plugin
-	$("#resultsTable").DataTable({
+	var table = $("#resultsTable").DataTable({
+		responsive: true,
 		searching: true,
-		ordering: false,
+		ordering: true,
 		paging: true,
+		// dom: 'Qfrtip',
+		fixedHeader: true,
 	});
 	replaceUndefined();
 	const paginateButtons = document.querySelectorAll(".paginate_button");
@@ -84,23 +65,17 @@ function genTable(results) {
 	});
 	const rowLimit = document.getElementById("resultsTable_length");
 	rowLimit.addEventListener("click", replaceUndefined);
+	$("button.toggle-vis").on("click", function (e) {
+		e.preventDefault();
+		this.classList.toggle("active");
+		// Get the column API object
+		var column = table.column($(this).attr("data-column"));
+		// Toggle the visibility
+		column.visible(!column.visible());
+	});
 }
-
-function toggleColumn(colIndex) {
-	var table = document.getElementById("resultsTable");
-	var isChecked = document.getElementById("showCol" + (colIndex + 1)).checked;
-	for (var i = 0; i < table.rows.length; i++) {
-		var row = table.rows[i];
-		if (isChecked) {
-			row.cells[colIndex].style.display = "";
-		} else {
-			row.cells[colIndex].style.display = "none";
-		}
-	}
-}
-
 function userAction() {
-	let searchString = document.getElementById("myInput").value;
+	let searchString = document.getElementById("nameSearchInput").value;
 	let webhook_url =
 		"https://eu-west-1.aws.data.mongodb-api.com/app/fyp-bffpf/endpoint/NameSearchWebhook";
 	let url = webhook_url + "?arg=" + searchString;
@@ -109,14 +84,34 @@ function userAction() {
 			return response.json();
 		})
 		.then(function (data) {
+			addToggleBtns();
 			genTable(data);
-			toggleColumn(0);
-			toggleColumn(1);
-			toggleColumn(2);
-			toggleColumn(3);
 		})
 		.catch(function (err) {
 			console.log(err);
 		});
-	document.getElementById("myInput").value = "";
+	document.getElementById("nameSearchInput").value = "";
+}
+
+function validateForm() {
+	var inputField = document.getElementById("nameSearchInput");
+	var searchMessage = document.getElementById("searchMessage");
+
+	if (inputField.value == "") {
+		inputField.classList.add("required");
+		searchMessage.innerHTML = "Why didn't you enter anything?";
+		searchMessage.style.display = "block";
+		setTimeout(function () {
+			// Remove required class and clear validation message after 5 seconds
+			inputField.classList.remove("required");
+			searchMessage.innerHTML = "";
+			searchMessage.style.display = "none";
+		}, 5000);
+		return false;
+	} else {
+		inputField.classList.remove("required");
+		searchMessage.innerHTML = "";
+		searchMessage.style.display = "none";
+		return true;
+	}
 }
