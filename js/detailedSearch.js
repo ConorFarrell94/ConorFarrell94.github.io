@@ -2,10 +2,10 @@ function addToggleBtns() {
 	const container = document.getElementById("toggleBtns");
 	container.innerHTML = `
 		<br/>
-		<p style="padding-left: 20px;">
+		<p style="text-align: center;">
 		  On smaller screens, you may need to click the <img src="./img/moreRowInfo.png" alt="Expand Row" width="20" height="20"/> icon to expand a table row and view additional data.
 		</p>
-		<p style="padding-left: 20px;">
+		<p style="text-align: center;">
 		You can save the current table to a format of your choice with the buttons below as well as toggle the display of columns.
 		</p>
 
@@ -61,7 +61,7 @@ function replaceUndefined() {
 
 function genTable(results) {
 	// Create the table and add it to the page
-	var tableHtml = '<table id="resultsTable" style="width: 100%;">';
+	var tableHtml = '<table id="resultsTable" style="width: 100%;text-align: center">';
 	tableHtml += "<thead><tr>";
 	tableHtml += "<th>Name</th>";
 	tableHtml += "<th>Surname</th>";
@@ -133,24 +133,28 @@ function genTable(results) {
 
 	// Initialize the DataTable plugin
 	var table = $("#resultsTable").DataTable({
+	autoFill: true,
 		responsive: true,
 		searching: true,
 		ordering: true,
 		paging: true,
-		fixedHeader: false,
+		fixedHeader: true,
 		dom: "BQlfrtip",
-		deferRender: false,
-		scrollY: 500,
-		scrollCollapse: false,
-		scroller: false,
+		deferRender: true,
+		scrollY: 900,
+		scrollCollapse: true,
+		// scroller: true,
 		lengthMenu: [
 			[10, 25, 50, -1],
 			[10, 25, 50, "All"],
 		],
+		pageLength: 10,
 		columnDefs: [
 			{ type: "num", targets: 4 },
 			{ type: "num", targets: 7 },
 		],
+
+
 	});
 
 	replaceUndefined();

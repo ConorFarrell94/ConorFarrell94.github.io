@@ -7,37 +7,6 @@ body {
 	border-bottom-right-radius: 20px;
 	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
 }
-.navbar ul:hover li a {
-	transform: scale(1.5);
-	opacity: 0.2;
-	filter: blur(5px);
-}
-.navbar ul li a:hover {
-	transform: scale(1);
-	opacity: 1;
-	filter: blur(0);
-	text-decoration: none;
-	color: #fff;
-}
-.navbar ul li a:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #0b5ed7;
-	color: #fff;
-	transition: 0.5s;
-	transform-origin: right;
-	transform: scaleX(0);
-	z-index: -1;
-}
-.navbar ul li a:hover:before {
-	transition: transform 0.5s;
-	transform-origin: left;
-	transform: scaleX(1);
-}
 .navbar {
 	background: #212529;
 }
@@ -79,29 +48,28 @@ input {
 .toggle-vis:hover {
 	transform: scale(1.2);
 }
-table.dataTable td,
+/* table.dataTable td,
 table.dataTable th {
 	padding: 5px;
-	border: 2px solid grey;
+	border: 1px solid grey;
 	overflow: hidden;
 }
-
 table.dataTable tbody tr {
 	border-bottom: 1px solid #ddd;
-}
-
+}*/
 table.dataTable tbody tr:nth-child(even) {
-	background-color: #afafaf;
+	background-color: #979797;
 	color: black;
+	border: 3px solid #ddd;
 }
-
+table.dataTable tbody tr:nth-child(odd) {
+	background-color: #34393d;
+	color: white;
+	border: 3px solid #ddd;
+}
 table.dataTable thead th {
-	background-color: #0b5ed7;
-	border: 2px solid grey;
-}
-.dtr-title,
-.dtr-data {
-	display: flex;
+	background-color: #1d1e44;
+	text-align: center;
 }
 .child {
 	background-color: #fff;
@@ -114,7 +82,6 @@ table.dataTable thead th {
 .search__field.required {
 	animation: flash 1s infinite; /* Loop the animation indefinitely */
 }
-
 @keyframes flash {
 	0% {
 		opacity: 1;
@@ -157,3 +124,30 @@ table.dataTable thead th {
 		transform: translateY(-20px) scale(1.1);
 	}
 }
+
+.btn-light {
+	background-color: #0056b3;
+	border-color: #0056b3;
+	color: #fff;
+}
+.dtsb-clearAll {
+	background-color: #dc3545;
+	border-color: #dc3545;
+	color: #fff;
+}
+.dtsb-data > option, .form-control-sm, select.form-select > option, .form-select {
+	background-color: #212529;
+	color: #fff;
+}
+.dtsb-data, select.form-select, .dtsb-value, .dtsb-value:active {
+	color: #fff;
+}
+.dt-buttons {
+	margin-bottom: 10px;
+	width: 50%;
+	margin: 0 auto;
+}
+/* li.paginate_button > a, #resultsTable_previous > a {
+	background-color: #212529;
+	color: #fff;
+} */
