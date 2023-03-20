@@ -34,4 +34,14 @@
 	padding: 40px;
 	width: 100%;
 }
+button.btn-secondary:nth-child(2) {
+	background-color: #0b5ed7;
+	color: #fff;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
+}
+button.btn-secondary:nth-child(2):hover {
+	background-color: #5c636a;
+	color: #fff;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12), 0 5px 4px rgba(0, 0, 0, 0.24);
+}
 

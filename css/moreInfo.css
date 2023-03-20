@@ -14,3 +14,10 @@
     padding-top: 5%;
 
 }
+#chart {
+	padding: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}

@@ -140,6 +140,9 @@ function genTable(results) {
 		paging: true,
 		fixedHeader: true,
 		dom: "BQlfrtip",
+		buttons: [
+            'excel','print'
+        ],
 		deferRender: true,
 		scrollY: 900,
 		scrollCollapse: true,
