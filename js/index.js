@@ -1,7 +1,3 @@
-// Define the directory path and file extension
-var directoryPath = "../img/Cap Badges/";
-var fileExtension = ".png";
-
 // Define an array of file names
 var fileNames = [
 	"South_African_Infantry",
@@ -114,15 +110,45 @@ var fileNames = [
 	"Seaforth_Highlanders",
 	"Somerset_Light_Infantry",
 ];
-
+// Define the directory path and file extension
+var directoryPath = "../img/Cap Badges/";
+var fileExtension = ".png";
+// Create an array of image URLs
 var images = [];
 for (var i = 1; i < fileNames.length; i++) {
-	images.push(directoryPath + fileNames[i] + fileExtension);
+  images.push(directoryPath + fileNames[i] + fileExtension);
 }
 
 var currentIndex = 0;
-var imageElement = document.getElementById("image");
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+function drawImage(imageUrl) {
+  var img = new Image();
+  img.src = imageUrl;
+  img.onload = function() {
+    var width = img.width;
+    var height = img.height;
+    var maxWidth = 400;
+    var maxHeight = 400;
+    if (width > height) {
+      if (width > maxWidth) {
+        height *= maxWidth / width;
+        width = maxWidth;
+      }
+    } else {
+      if (height > maxHeight) {
+        width *= maxHeight / height;
+        height = maxHeight;
+      }
+    }
+    canvas.width = width;
+    canvas.height = height;
+    ctx.drawImage(img, 0, 0, width, height);
+  };
+}
+
 setInterval(() => {
-	currentIndex = (currentIndex + 1) % images.length;
-	imageElement.src = images[currentIndex];
+  currentIndex = (currentIndex + 1) % images.length;
+  drawImage(images[currentIndex]);
 }, 3000);

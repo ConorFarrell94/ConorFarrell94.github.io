@@ -56,7 +56,7 @@
 							<a class="nav-link" aria-current="page" href="index.html">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="moreInfo.html">More Info</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="contact.html">Contact</a>
@@ -78,8 +78,8 @@
 								A WW1 Analysis
 							</h1>
 							<p class="lead text-white mb-4">
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-								Cupiditate nesciunt ipsam dolorum provident.
+								Get started right away by searching for a veteran by their first
+								name or learn more about the project.
 							</p>
 							<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
 								<a
@@ -87,7 +87,9 @@
 									href="getStarted.html"
 									>Firstname Search</a
 								>
-								<a class="btn btn-outline-light btn-lg px-4" href="about.html"
+								<a
+									class="btn btn-outline-light btn-lg px-4"
+									href="index.html#pageInfo"
 									>Learn More</a
 								>
 							</div>
@@ -172,44 +174,89 @@
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid text-center d-xxl-flex justify-content-xxl-center py-4 py-xl-5 dark">
-			<div class="row">
-				<div class="col-md-8 col-xl-6 mx-auto p-4">
-					<div class="d-flex align-items-center align-items-md-start align-items-xl-center">
-						<div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon"><i class="icon ion-map"></i></div>
-						<div>
-							<h4><strong>Geographical Spread</strong></h4>
-							<p>See where the soldiers are from on the map.</p><a href="map.html"><strong>Get Started&nbsp;</strong><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+		<!-- Page Content -->
+		<div id="pageInfo">
+			<div class="col-md-8">
+				<h1 class="mb-5">
+					Welcome to the WW1 Irish Soldiers Database
+				</h1>
+				<p>
+					Our database contains a wealth of information on Irish soldiers who
+					were treated in British-run hospitals during World War 1. This data
+					includes their name, age, rank, unit,home address, next of kin as well
+					as records of the reason for their admittance to hospital, the type of
+					wound they sustained, and any comments made by the doctors treating
+					them.
+				</p>
+				<p>
+					This data was collected from multiple national archives where it was
+					stored on paper, much of which was illegible. The data was then
+					painstakingly transcribed into Excel spreadsheets one record at a
+					time. We are proud to have assembled this valuable resource, which
+					will be a valuable aid to researchers, historians, and students
+					studying Irish history during the war.
+				</p>
+				<p>
+					We hope that this database will help to shed light on the experiences
+					of these soldiers and honor their contributions to the war effort.
+					Thank you for visiting our website, and we hope you find it a useful
+					tool for your research and studies.
+				</p>
+				<hr />
+				<p>
+					If you have any questions or comments about the database, or if you
+					have additional information that you would like to contribute, please
+					feel free to contact us using the form on the Contact page.
+				</p>
+			</div>
+			<!-- Cap Badges -->
+			<div id="capBadge-div">
+				<canvas id="canvas"></canvas>
+			</div>
+		</div>
+		<!-- hero section -->
+		<div class="container py-4 py-xl-5">
+			<div class="row mb-5">
+				<div class="col-md-8 col-xl-6 text-center mx-auto">
+					<h2>Start Searching</h2>
+					<p>Here you can find the different ways to view our data, choose from being able to see where the soldiers were located on the map, performing an in depth search for more detailed results or simply clicking on a body part to see the soldiers who suffered a wound there.</p>
+				</div>
+			</div>
+			<div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+				<div class="col">
+					<div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+						<div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="icon ion-map"></i></div>
+						<div class="px-3">
+							<h4>Geographical Spread</h4>
+							<p>See where the soldiers are from on the map.</p><a href="map.html">Get Started<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
 									<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
 								</svg></a>
 						</div>
 					</div>
-					<hr class="my-5">
-					<div class="d-flex align-items-center align-items-md-start align-items-xl-center">
-						<div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center order-last ms-4 d-inline-block bs-icon"><i class="icon ion-search"></i></div>
-						<div>
-							<h4><strong>Detailed Search</strong></h4>
-							<p>Perform a search then refine it as you go.</p><a href="detailedSearch.html"><strong>Get Started&nbsp;</strong><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+				</div>
+				<div class="col">
+					<div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+						<div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="icon ion-search"></i></div>
+						<div class="px-3">
+							<h4>Detailed Search</h4>
+							<p>Perform a search then refine it as you go.</p><a href="detailedSearch.html">Get Started&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
 									<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
 								</svg></a>
 						</div>
 					</div>
-					<hr class="my-5">
-					<div class="d-flex align-items-center align-items-md-start align-items-xl-center">
-						<div class="bs-icon-xl bs-icon-circle bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center me-4 d-inline-block bs-icon"><i class="icon ion-ios-body"></i></div>
-						<div>
-							<h4><strong>Body Model</strong></h4>
-							<p>Select a body part on the 2-D model to see which soldiers were wounded in that part.</p><a href="bodyModel.html"><strong>Get Started&nbsp;</strong><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+				</div>
+				<div class="col">
+					<div class="text-center d-flex flex-column align-items-center align-items-xl-center">
+						<div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="icon ion-ios-body"></i></div>
+						<div class="px-3">
+							<h4>Body Model</h4>
+							<p>Search by body part</p><a href="bodyModel.html">Get Started&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
 									<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
 								</svg></a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Cap Badges -->
-		<div id="capBadge-div">
-			<img id="image" src="" />
 		</div>
 		<div id="unitByCountDiv">
 			<!-- unit by count chart -->
@@ -242,7 +289,7 @@
 		<!-- Footer-->
 		<footer class="py-5 bg-dark">
 			<div class="container px-5">
-				<p class="m-0 text-center text-white">Copyright &copy; My Website</p>
+				<!-- <p class="m-0 text-center text-white">Copyright &copy; My Website</p> -->
 			</div>
 			<script src="./js/scripts.js"></script>
 			<script src="./js/index.js"></script>

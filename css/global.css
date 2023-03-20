@@ -48,7 +48,7 @@ input {
 .toggle-vis:hover {
 	transform: scale(1.2);
 }
-/* table.dataTable td,
+table.dataTable td,
 table.dataTable th {
 	padding: 5px;
 	border: 1px solid grey;
@@ -56,7 +56,7 @@ table.dataTable th {
 }
 table.dataTable tbody tr {
 	border-bottom: 1px solid #ddd;
-}*/
+}
 table.dataTable tbody tr:nth-child(even) {
 	background-color: #979797;
 	color: black;

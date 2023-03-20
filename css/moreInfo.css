@@ -1,0 +1,16 @@
+.table-wrapper-scroll-y {
+	width: 50%;
+	display: block;
+	max-height: 500px;
+	overflow-y: auto;
+    margin: 0 auto;
+}
+.fixed-header th {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+#abbreviationsInfo {
+    padding-top: 5%;
+
+}

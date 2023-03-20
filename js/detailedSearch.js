@@ -61,7 +61,8 @@ function replaceUndefined() {
 
 function genTable(results) {
 	// Create the table and add it to the page
-	var tableHtml = '<table id="resultsTable" style="width: 100%;text-align: center">';
+	var tableHtml =
+		'<table id="resultsTable" style="width: 100%;text-align: center">';
 	tableHtml += "<thead><tr>";
 	tableHtml += "<th>Name</th>";
 	tableHtml += "<th>Surname</th>";
@@ -133,7 +134,6 @@ function genTable(results) {
 
 	// Initialize the DataTable plugin
 	var table = $("#resultsTable").DataTable({
-	autoFill: true,
 		responsive: true,
 		searching: true,
 		ordering: true,
@@ -153,8 +153,6 @@ function genTable(results) {
 			{ type: "num", targets: 4 },
 			{ type: "num", targets: 7 },
 		],
-
-
 	});
 
 	replaceUndefined();
@@ -172,6 +170,7 @@ function genTable(results) {
 		// Toggle the visibility
 		column.visible(!column.visible());
 	});
+
 }
 
 function userAction() {
