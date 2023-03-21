@@ -83,3 +83,15 @@
 .bs-icon.bs-icon-circle {
 	border-radius: 50%;
 }
+.overlay {
+	position: relative;
+	height: 400px;
+	background-color: #212529;
+	background-image: url("../img/two.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	/* background-attachment: fixed; */
+	background-color: grey;
+	background-blend-mode: multiply
+}

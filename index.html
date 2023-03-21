@@ -82,11 +82,17 @@
 								name or learn more about the project.
 							</p>
 							<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-								<a
-									class="btn btn-primary btn-lg px-4 me-sm-3"
-									href="getStarted.html"
-									>Firstname Search</a
-								>
+								<div class="dropdown">
+									<button class="btn btn-primary btn-lg dropdown-toggle me-sm-3" type="button" id="searchDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+									  Start Searching
+									</button>
+									<ul class="dropdown-menu" aria-labelledby="searchDropdown">
+									  <li><a class="dropdown-item" href="firstNameSearch.html">First Name Search</a></li>
+									  <li><a class="dropdown-item" href="detailedSearch.html">Detailed Search</a></li>
+									  <li><a class="dropdown-item" href="index.html#searchSection">Map & Body Model</a></li>
+									</ul>
+								  </div>
+
 								<a
 									class="btn btn-outline-light btn-lg px-4"
 									href="index.html#pageInfo"
@@ -177,9 +183,7 @@
 		<!-- Page Content -->
 		<div id="pageInfo">
 			<div class="col-md-8">
-				<h1 class="mb-5">
-					Welcome to the WW1 Irish Soldiers Database
-				</h1>
+				<h1 class="mb-5">Welcome to the WW1 Irish Soldiers Database</h1>
 				<p>
 					Our database contains a wealth of information on Irish soldiers who
 					were treated in British-run hospitals during World War 1. This data
@@ -214,45 +218,368 @@
 				<canvas id="canvas"></canvas>
 			</div>
 		</div>
-		<!-- hero section -->
-		<div class="container py-4 py-xl-5">
+
+		<!-- article -->
+		<header class="masthead">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-lg-8 mx-auto position-relative">
+						<div class="post-heading text-center">
+							<h1></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<article>
+			<div class="container" style="padding-top: 5%">
+				<div class="row">
+					<div class="col-md-10 col-lg-8 mx-auto">
+						<h2 class="section-heading">A "Lost Generation"</h2>
+						<p>
+							It is beyond contestation that certain groups suffered
+							disproportionately higher casualties than others, but this is
+							always true in war. British and Empire fatalities are estimated to
+							have been almost 900,000 out of approximately eight million people
+							who served in the military. At a personal level many dealt with
+							the grief of losing a loved one by cherishing their memory
+							throughout long periods of mourning or in a more tangible way such
+							as personal keepsakes. The emotions felt by those who chose this
+							path were quite often private and very personal. But many within
+							society and among the relatives of the unprecedented numbers of
+							missing needed something more. They found a focus for their grief
+							and loss in the more formal commemorative process that developed
+							in the years following the war and that commemorative process
+							seemed to dominate the public perception of the war.
+						</p>
+						<p>
+							During the decade of commemoration there has been an increased
+							interest in the many Irish men and women who served in the First
+							World War. There is an increasing amount of literature on the
+							Irish involvement in the military aspects of this conflict. There
+							is a limited amount of literature available about the individuals
+							who called the newly independent Irish Free State, home. Many
+							accounts detail the number of dead suffered on all sides and are
+							often illustrate this with a photograph of rows of headstones, or
+							in the case of a documentary, a panning shot across one of the
+							many graveyards scattered across the landscape of northern Europe.
+							Whatever the final number of dead may have been there was an even
+							greater number of soldiers who were injured or acquired a
+							debilitating illness.
+						</p>
+						<p>
+							The total number of sick and wounded has been re-assessed over
+							time. It is estimated that 2.3 million British soldiers were
+							treated for wounds, of which 7% later died and 8% were invalided
+							out of the service. Many others returned to full or limited
+							military service depending on the severity of the wounds suffered,
+							sometimes to be wounded a second or more times. These groups,
+							their dependants and those who later received war pensions in
+							respect of injuries or illness seem to have received less
+							publicity than smaller more newsworthy groups. If the war dead
+							were the "Lost Generation" of the early twentieth century, this
+							origin of this work was the idea that the wounded and sick of the
+							war, especially those who were disfigured or disabled could well
+							be considered a "Forgotten Generation".
+						</p>
+						<h2 class="section-heading">The Data</h2>
+						<p>
+							A good deal of the available literature of those who served in the
+							Great War examines the psychological damage experienced by
+							veterans, a phenomenon then known as Shellshock or Neurasthenia,
+							and now more commonly referred to as Post Traumatic Stress
+							Disorder (PTSD). The research from which this dataset is taken is
+							different in that it deals more specifically with those who
+							suffered from what mainly physical disabilities, although this
+							does not mean that many veterans suffered from combinations of
+							both physical and mental trauma. This is a feature that will
+							become apparent as the data is analysed.
+						</p>
+						<p>
+							The research from which this dataset is taken is different in that
+							it deals more specifically with those who suffered from what can
+							be described as mainly physical disabilities. In the compilation
+							of official figures for disability pensions awarded by the
+							Ministry of Pensions, psychological conditions of all types were
+							categorised as diseases which meant that they were accounted for
+							in the non-combatant category. An analysis of the annual reports
+							published by the British Ministry of Pensions from 1918 to 1939
+							show that even at its greatest level, an average of just 9% of the
+							disability pensions awarded were for a psychological disorder
+							directly attributable to the war service of an individual. The
+							logical conclusion from these figures is that the overwhelming
+							number of pensions awarded were for physical injuries or diseases.
+							This facet of the story of disabled veterans of the Great War has
+							not been considered in as great an amount of detail as has the
+							story of the victims of Shellshock.
+						</p>
+						<p>
+							Even for example, if the statistics from the first Ministry Report
+							are adjusted to categorise psychological injuries as wounds, the
+							number of disease related disability pensions still exceed those
+							awarded for wounds or injuries in the proportion of 51% to 49%.
+						</p>
+						<img
+							class="img-fluid"
+							src="./img/three.png"
+							style="
+								height: 50vh;
+								display: block;
+								margin-left: auto;
+								margin-right: auto;
+							"
+						/>
+						<span
+							class="text-muted caption"
+							style="text-align: center; display: block"
+							>Extract from the First Annual Report of the Minister of Pensions
+							published in 1919.</span
+						>
+						<h2 class="section-heading">The Nature of the Medical Care</h2>
+						<p>
+							The British government, through its Ministry of Pensions, put in
+							place a three level system of care for disabled veterans in the
+							Irish Free State. The first level of care was provided by medical
+							general practitioners (GPs) who provided treatment as needed to
+							any veteran who was in receipt of a disability pension. The GPs
+							were paid for their services by the London based Ministry of
+							Pensions. In the early years of the Irish Free State there were
+							approximately 27,000 men availing of this service. British
+							Treasury estimates were that the cost for this was near £2.600 per
+							annum.
+						</p>
+						<p>
+							The second arm of the triumvirate of medical services available to
+							disabled veterans of the Great War in Ireland were outpatient
+							clinics. A clinic offered specialised treatment for more serious
+							or persistent wounds or illnesses. They could be located in either
+							civilian or Ministry of Pensions run hospitals. They came to be
+							regarded as a more efficient and cost-effective way of providing
+							care for veterans. During the war civilian hospitals had provided
+							invaluable aftercare for many sick and wounded personnel leaving
+							Ministry of Pensions and military medical staff free for more
+							immediate primary care of patients.
+						</p>
+						<p>
+							After hostilities ended there were concerns that disabled
+							servicemen were not receiving the best possible care in civilian
+							run clinics albeit through no fault of the hospital concerned. For
+							instance, in Dublin city at that time, there were eighteen
+							civilian hospital providing various outpatient facilities for
+							disabled veterans and as an example of the numbers involved, in
+							November 1920 alone these treated 2,199 ex-servicemen over 14,727
+							separate visits. Eventually these clinics were reduced to just two
+							Ministry of Pensions run establishments based in Dublin and Cork,
+							a factor that resulted in a significant saving in the cost of
+							continuing medical care for veterans in the Free State. This is
+							illustrated in the table below extracted from Ministry of Pensions
+							files.
+						</p>
+						<img
+							class="img-fluid"
+							src="./img/four.png"
+							style="
+								height: 50vh;
+								display: block;
+								margin-left: auto;
+								margin-right: auto;
+							"
+						/>
+						<span
+							class="text-muted caption"
+							style="text-align: center; display: block"
+							>PIN15/136 Ministry of Pensions Clinics, NAUK. List of Ministry of
+							Pensions clinics in towns in UK dated 23 June 1922.</span
+						>
+						<h2 class="section-heading">The Hospital Patient Registers</h2>
+						<p>
+							In 2017, Eoin Kinsella published a history of the Leopardstown
+							Park Hospital as part of the centenary celebrations of that
+							establishment Which is located adjacent to the Leopardstown
+							Racecourse. It is currently a HSE facility that specialises in the
+							care of geriatric patients. In addition, it also provides for the
+							care of elderly pensioners who had been members of the British
+							Armed Forces. This is a legacy from when the hospital was one of
+							two British government hospitals in south county Dublin that had
+							been established to care for the sick and wounded of the First
+							World War.
+						</p>
+						<p>
+							The other hospital was the Blackrock Special Orthopaedic Hospital
+							that was situated on Carysfort Avenue, a relatively short distance
+							from Leopardstown. During his research Kinsella discovered seven
+							patient registers of First World War veterans from the two
+							hospitals ranging from the 1920s to the mid-1940s. Except for
+							Admission and Discharge Books five to seven, they are not
+							chronologically contiguous and as such they can be classified into
+							four distinct groups.
+						</p>
+						<h5 class="section-heading">
+							Book 1: Blackrock Admittance and Discharge Book April 1920 -
+							August 1926.
+						</h5>
+						<p>
+							This book contains the earliest set of records for ex-officer
+							patients in the Blackrock hospital for this period that has been
+							found. The 286 entries in this volume also contain details of six
+							females who served in various branches of the nursing services who
+							were acquired a debilitating injury or disease as a result of
+							their service. As was the case then, as it is still now, the
+							medical treatment of officers and nurses was strictly segregated
+							from that of enlisted personnel.
+						</p>
+						<h5 class="section-heading">
+							Book 4: Colonial Chelsea Pensioners Admission and Discharge Book
+							May 1920 to June 1945.
+						</h5>
+						<p>
+							Peculiarly, this book does not record actual Chelsea Pensioners,
+							so well known for their archaic red uniforms and tricorn hats.
+							Rather this book is a record of Irishmen who were disabled in the
+							armed forces of Australia, Canada, South Africa, and the United
+							States. Having chosen to return to Ireland to live, their medical
+							care was undertaken in Ministry of Pension facilities under
+							reciprocal arrangements with those countries for the treatment of
+							British and Irish disabled veterans who chose to live in those
+							parts of the Empire.
+						</p>
+						<h5 class="section-heading">Books 5-7:</h5>
+						<h5>
+							Leopardstown Park Admission and Discharge Book Aug 1930 to Oct
+							1936.
+						</h5>
+						<h5>
+							Leopardstown Park Admission and Discharge Book Oct 1936 to May
+							1942.
+						</h5>
+						<h5>
+							Leopardstown Park Admission and Discharge Book May 1942 to July
+							1945.
+						</h5>
+						<p>
+							These three books form the largest record of its type known to
+							exist in the British Isles. All told, they contain a total of
+							3,050 entries, some of which chronicle individuals who were
+							admitted on several occasions including an ex-Private of the Royal
+							Army Service Corps (RASC) who was a patient no less than nineteen
+							times between July 1928 and October 1942.
+						</p>
+						<img
+							class="img-fluid"
+							src="./img/sample_pages1.JPG"
+							style="
+								height: 50vh;
+								display: block;
+								margin-left: auto;
+								margin-right: auto;
+							"
+						/>
+						<span
+							class="text-muted caption"
+							style="text-align: center; display: block"
+							>Sample page taken from one of the record books.</span
+						>
+					</div>
+				</div>
+			</div>
+		</article>
+		<!-- search section -->
+		<div class="container py-4 py-xl-5" id="searchSection">
 			<div class="row mb-5">
 				<div class="col-md-8 col-xl-6 text-center mx-auto">
 					<h2>Start Searching</h2>
-					<p>Here you can find the different ways to view our data, choose from being able to see where the soldiers were located on the map, performing an in depth search for more detailed results or simply clicking on a body part to see the soldiers who suffered a wound there.</p>
+					<p>
+						Here you can find the different ways to view our data, choose from
+						being able to see where the soldiers were located on the map,
+						performing an in depth search for more detailed results or simply
+						clicking on a body part to see the soldiers who suffered a wound
+						there.
+					</p>
 				</div>
 			</div>
 			<div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
 				<div class="col">
-					<div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-						<div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="icon ion-map"></i></div>
+					<div
+						class="text-center d-flex flex-column align-items-center align-items-xl-center"
+					>
+						<div
+							class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"
+						>
+							<i class="icon ion-map"></i>
+						</div>
 						<div class="px-3">
 							<h4>Geographical Spread</h4>
-							<p>See where the soldiers are from on the map.</p><a href="map.html">Get Started<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-									<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-								</svg></a>
+							<p>See where the soldiers are from on the map</p>
+							<a href="map.html"
+								>Get Started<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									viewBox="0 0 16 16"
+									class="bi bi-arrow-right"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+									></path></svg></a>
 						</div>
 					</div>
 				</div>
 				<div class="col">
-					<div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-						<div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="icon ion-search"></i></div>
+					<div
+						class="text-center d-flex flex-column align-items-center align-items-xl-center"
+					>
+						<div
+							class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"
+						>
+							<i class="icon ion-search"></i>
+						</div>
 						<div class="px-3">
 							<h4>Detailed Search</h4>
-							<p>Perform a search then refine it as you go.</p><a href="detailedSearch.html">Get Started&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-									<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-								</svg></a>
+							<p>Perform a search then refine it as you go</p>
+							<a href="detailedSearch.html"
+								>Get Started&nbsp;<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									viewBox="0 0 16 16"
+									class="bi bi-arrow-right"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+									></path></svg></a>
 						</div>
 					</div>
 				</div>
 				<div class="col">
-					<div class="text-center d-flex flex-column align-items-center align-items-xl-center">
-						<div class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="icon ion-ios-body"></i></div>
+					<div
+						class="text-center d-flex flex-column align-items-center align-items-xl-center"
+					>
+						<div
+							class="bs-icon-lg bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-3 bs-icon"
+						>
+							<i class="icon ion-ios-body"></i>
+						</div>
 						<div class="px-3">
 							<h4>Body Model</h4>
-							<p>Search by body part</p><a href="bodyModel.html">Get Started&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-									<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-								</svg></a>
+							<p>Search by body part</p>
+							<a href="bodyModel.html"
+								>Get Started&nbsp;<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="1em"
+									height="1em"
+									fill="currentColor"
+									viewBox="0 0 16 16"
+									class="bi bi-arrow-right"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+									></path></svg></a>
 						</div>
 					</div>
 				</div>
