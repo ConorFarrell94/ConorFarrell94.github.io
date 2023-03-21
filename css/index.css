@@ -9,15 +9,15 @@
 }
 #pageInfo {
 	padding-top: 5%;
-	border-bottom: 300px transparent;
+	/* border-bottom: 300px transparent; */
 	padding-bottom: 5%;
 	display: flex;
 	justify-content: space-evenly;
 }
-#capBadge-div img {
-	width: 100%;
-	height: 75%;
-	object-fit: contain;
+#capBadge-div {
+	align-content: center;
+	width : 100%;
+	padding-left: 5%;
 }
 .dark {
 	background-color: #212529;
