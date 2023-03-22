@@ -5,9 +5,6 @@ function addToggleBtns() {
 		<p style="text-align: center;">
 		  On smaller screens, you may need to click the <img src="./img/moreRowInfo.png" alt="Expand Row" width="20" height="20"/> icon to expand a table row and view additional data.
 		</p>
-		<p style="text-align: center;">
-		You can save the current table to a format of your choice with the buttons below as well as toggle the display of columns.
-		</p>
 
 		<h6 style="text-align: center;">Toggle column:</h6>
 		<div class="buttons-row">
@@ -62,7 +59,7 @@ function replaceUndefined() {
 function genTable(results) {
 	// Create the table and add it to the page
 	var tableHtml =
-		'<table id="resultsTable" style="width: 100%;text-align: center">';
+		'<table id="resultsTable" style="width: 100%;text-align: center" onmousedown="return false" onselectstart="return false">';
 	tableHtml += "<thead><tr>";
 	tableHtml += "<th>Name</th>";
 	tableHtml += "<th>Surname</th>";
@@ -139,10 +136,7 @@ function genTable(results) {
 		ordering: true,
 		paging: true,
 		fixedHeader: true,
-		dom: "BQlfrtip",
-		buttons: [ 
-            'excel','print'
-        ],
+		dom: "Qlfrtip",
 		deferRender: true,
 		scrollY: 900,
 		scrollCollapse: true,

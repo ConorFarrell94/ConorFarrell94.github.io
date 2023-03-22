@@ -29,7 +29,7 @@ function replaceUndefined() {
 
 function genTable(results) {
 	// Create the table and add it to the page
-	var tableHtml = '<table id="resultsTable" style="width: 100%">';
+	var tableHtml = '<table id="resultsTable" style="width: 100%" onmousedown="return false" onselectstart="return false">';
 	tableHtml += "<thead><tr>";
 	tableHtml += "<th>Name</th>";
 	tableHtml += "<th>Surname</th>";
