@@ -192,7 +192,7 @@ function makeMap() {
 		document.getElementById("flexRadioDefault1").checked = false;
 		document.getElementById("flexRadioDefault2").checked = false;
 		var range = document.getElementById("myRange");
-		range.value = 50;
+		range.value = 15;
 		update();
 
 		// Remove all layers from the map
