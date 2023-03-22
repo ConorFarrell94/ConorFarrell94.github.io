@@ -78,6 +78,15 @@
 				</div>
 			</div>
 		</nav>
+		<div class="container" id="pageInfo" style="padding-top: 5%">
+			<h2 class="section-heading">Geographical Spread</h2>
+			<p>
+				Here you can use the map to see the geographical spread of the data. You
+				can use the circle or polygon tool to draw a shape on the map. The map
+				will then show you the number of veterans that are within that shape.
+				You can also use the slider to change the radius of the circle.
+			</p>
+		</div>
 		<div class="containerForMap">
 			<div class="mapContainer">
 				<div id="map"></div>
@@ -99,7 +108,9 @@
 						name="flexRadioDefault"
 						id="flexRadioDefault2"
 					/>
-					<label class="form-check-label" for="flexRadioDefault2">Polygon</label>
+					<label class="form-check-label" for="flexRadioDefault2"
+						>Polygon</label
+					>
 				</div>
 				<div id="slidecontainer">
 					Circle range/radius: <span id="range"></span
@@ -112,11 +123,10 @@
 						id="myRange"
 						oninput="update()"
 					/>
-				<button class="btn" id="resetBtn">Reset - Clear Map</button>
-
+					<button class="btn" id="resetBtn">Reset - Clear Map</button>
 				</div>
 			</div>
-		  </div>
+		</div>
 		<!-- The map container where the map will be displayed -->
 
 		<script>
