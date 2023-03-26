@@ -55,7 +55,7 @@ function makeMap() {
 			markersLayer.clearLayers();
 			markersLayer.addTo(map);
 
-			markersLayer.clearLayers();
+			// markersLayer.clearLayers();
 			circleslayer = new L.LayerGroup();
 			function onMapClick(e) {
 				var range = document.getElementById("myRange").value * 1000;
@@ -129,12 +129,12 @@ function makeMap() {
 				if (numPoints === 1) {
 					L.popup()
 						.setLatLng(e.latlng)
-						.setContent("Click two more points to make a polygon.")
+						.setContent("Click two more points to make a triangle.")
 						.openOn(map);
 				} else if (numPoints === 2) {
 					L.popup()
 						.setLatLng(e.latlng)
-						.setContent("Click one more point to complete the polygon.")
+						.setContent("Click one more point to complete the triangle.")
 						.openOn(map);
 				} else if (numPoints === 3) {
 					var polygon = L.polygon(polygonCoords, {

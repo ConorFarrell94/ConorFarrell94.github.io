@@ -2,8 +2,10 @@
 	padding-top: 5vh;
 	padding-bottom: 5vh;
 	margin: 0 auto;
-	max-width: 60vw;
+	/* max-width: 60vw; */
 	text-align: center;
+	justify-content: center;
+	display: flex;
 }
 #fs-frm {
 	padding: 10%;
@@ -45,11 +47,6 @@
 #fs-frm input[type="submit"] {
 	margin-top: 20px;
 }
-
-#fs-frm input[type="submit"]:hover {
-	background-color: #007bff;
-}
-
 #fs-frm-inputs label[for="full-name"]::after,
 #fs-frm-inputs label[for="email-address"]::after,
 #fs-frm-inputs label[for="contact"]::after {

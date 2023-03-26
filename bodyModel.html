@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>WW1 Veterans</title>
+		<link rel="icon" href="./img/hat.png">
 
 		<script src="./js/scripts.js"></script>
 		<script src="./js/jquery.min.js"></script>
@@ -71,11 +72,37 @@
 						<li class="nav-item">
 							<a class="nav-link" href="contact.html">Contact</a>
 						</li>
+						<li class="nav-item dropdown">
+							<a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="navbarDropdownSearch"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Search
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownSearch">
+								<li><a class="dropdown-item" href="map.html">Map</a></li>
+								<li>
+									<a class="dropdown-item" href="detailedSearch.html"
+										>Detailed</a
+									>
+								</li>
+								<li><a class="dropdown-item" href="bodyModel.html">Body</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<div class="container" id="pageInfo" style="padding-top: 5%; padding-bottom: 5%;">
+
+		<div
+			class="container"
+			id="pageInfo"
+			style="padding-top: 5%; padding-bottom: 5%"
+		>
 			<h2 class="section-heading text-center">Body Model</h2>
 			<p class="text-center">
 				Click on the body parts to see which soldiers suffered a wound there.

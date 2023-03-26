@@ -113,42 +113,58 @@ var fileNames = [
 // Define the directory path and file extension
 var directoryPath = "../img/Cap Badges/";
 var fileExtension = ".png";
+
 // Create an array of image URLs
 var images = [];
-for (var i = 1; i < fileNames.length; i++) {
-  images.push(directoryPath + fileNames[i] + fileExtension);
+
+// Function to shuffle the array
+function shuffleArray(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var j = Math.floor(Math.random() * (i + 1));
+		var temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	return array;
 }
+
+for (var i = 1; i < fileNames.length; i++) {
+	images.push(directoryPath + fileNames[i] + fileExtension);
+}
+
+// Shuffle the images array
+images = shuffleArray(images);
 
 var currentIndex = 0;
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 function drawImage(imageUrl) {
-  var img = new Image();
-  img.src = imageUrl;
-  img.onload = function() {
-    var width = img.width;
-    var height = img.height;
-    var maxWidth = 400;
-    var maxHeight = 400;
-    if (width > height) {
-      if (width > maxWidth) {
-        height *= maxWidth / width;
-        width = maxWidth;
-      }
-    } else {
-      if (height > maxHeight) {
-        width *= maxHeight / height;
-        height = maxHeight;
-      }
-    }
-    canvas.width = width;
-    canvas.height = height;
-    ctx.drawImage(img, 0, 0, width, height);
-  };
+	var img = new Image();
+	img.src = imageUrl;
+	img.onload = function () {
+		var width = img.width;
+		var height = img.height;
+		var maxWidth = 400;
+		var maxHeight = 400;
+		if (width > height) {
+			if (width > maxWidth) {
+				height *= maxWidth / width;
+				width = maxWidth;
+			}
+		} else {
+			if (height > maxHeight) {
+				width *= maxHeight / height;
+				height = maxHeight;
+			}
+		}
+		canvas.width = width;
+		canvas.height = height;
+		ctx.drawImage(img, 0, 0, width, height);
+	};
 }
 
 setInterval(() => {
-  currentIndex = (currentIndex + 1) % images.length;
-  drawImage(images[currentIndex]);
+	currentIndex = (currentIndex + 1) % images.length;
+	drawImage(images[currentIndex]);
 }, 3000);

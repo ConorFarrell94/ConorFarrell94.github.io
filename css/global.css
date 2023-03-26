@@ -100,11 +100,11 @@ table.dataTable thead th {
 	margin-top: 5px;
 }
 .toggle-vis.active {
-	background-color: #dc3545;
+	background-color: red;
 	color: #fff;
 }
 .toggle-vis {
-	background-color: #10d160;
+	/* background-color: #10d160; */
 	border-color: #000000;
 	color: #000000;
 	margin-right: 10px;
@@ -147,7 +147,23 @@ table.dataTable thead th {
 	width: 50%;
 	margin: 0 auto;
 }
-/* li.paginate_button > a, #resultsTable_previous > a {
+#resultsTable_previous > a:nth-child(1) {
 	background-color: #212529;
 	color: #fff;
-} */
+}
+#resultsTable_previous > a:nth-child(1):hover {
+	background-color: #e9ecef;
+	color: #1978d6;
+}
+#resultsTable_ellipsis > a:nth-child(1) {
+	background-color: #212529;
+	color: #fff;
+}
+.pagination > li > a {
+	background-color: #212529;
+	color: #fff;
+}
+li.paginate_button:active {
+	background-color: #1978d6;
+	color: #fff;
+}
