@@ -80,7 +80,6 @@ function genTable(results) {
 		scrollY: 600,
 		scrollCollapse: false,
 		scroller: false,
-		// dom: 'Qfrtip',
 		fixedHeader: true,
 	});
 	replaceUndefined();

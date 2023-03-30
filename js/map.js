@@ -60,11 +60,6 @@ function makeMap() {
 			function onMapClick(e) {
 				var range = document.getElementById("myRange").value * 1000;
 				if (e && e.latlng) {
-					// clickCircle = L.circle(e.latlng, range, {
-					// 	color: "#ff3b6b",
-					// 	fillOpacity: 0.3,
-					// 	opacity: 1,
-					// }).addTo(map);
 					var circle = L.circle(e.latlng, range, {
 						color: "#ff3b6b",
 						fillOpacity: 0.3,

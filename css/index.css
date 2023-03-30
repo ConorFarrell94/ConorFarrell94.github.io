@@ -9,14 +9,13 @@
 }
 #pageInfo {
 	padding-top: 5%;
-	/* border-bottom: 300px transparent; */
 	padding-bottom: 5%;
 	display: flex;
 	justify-content: space-evenly;
 }
 #capBadge-div {
 	align-content: center;
-	width : 100%;
+	width: 100%;
 	padding-left: 5%;
 }
 .dark {
@@ -91,7 +90,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	/* background-attachment: fixed; */
 	background-color: grey;
-	background-blend-mode: multiply
+	background-blend-mode: multiply;
 }

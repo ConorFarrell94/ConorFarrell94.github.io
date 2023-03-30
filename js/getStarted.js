@@ -55,7 +55,6 @@ function genTable(results) {
 		searching: true,
 		ordering: true,
 		paging: true,
-		// dom: 'Qfrtip',
 		fixedHeader: true,
 	});
 	replaceUndefined();

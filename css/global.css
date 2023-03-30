@@ -135,11 +135,17 @@ table.dataTable thead th {
 	border-color: #dc3545;
 	color: #fff;
 }
-.dtsb-data > option, .form-control-sm, select.form-select > option, .form-select {
+.dtsb-data > option,
+.form-control-sm,
+select.form-select > option,
+.form-select {
 	background-color: #212529;
 	color: #fff;
 }
-.dtsb-data, select.form-select, .dtsb-value, .dtsb-value:active {
+.dtsb-data,
+select.form-select,
+.dtsb-value,
+.dtsb-value:active {
 	color: #fff;
 }
 .dt-buttons {
